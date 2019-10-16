@@ -3,6 +3,7 @@ const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const db = require("./db");
 const port = process.env.PORT || 8080;
 const app = express();
 
@@ -45,5 +46,7 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(err.status || 500).send(err.message || "Internal server error.");
 });
+
+db.sync(); //{force : true}
 
 app.listen(port, () => console.log(`Web service running on port ${port}`));
