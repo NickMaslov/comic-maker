@@ -1,5 +1,7 @@
 export { default as Navbar } from "./Static/Navbar";
 export { Login, Signup } from "./Static/AuthForm";
+export { default as UserProfile } from "./UserProfile/UserProfile";
+export { default as UserProfileEdit } from "./UserProfile/UserProfileEdit";
 export { default as Templates } from "./Templates/Templates";
 export { default as SelectTemplate } from "./Templates/SelectTemplate";
 export { default as SingleStoryContainer } from "./Stories/SingleStory";

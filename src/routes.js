@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 import {
   Login,
   Signup,
+  UserProfile,
+  UserProfileEdit,
   HomePage,
   Templates,
   SelectTemplate,
@@ -40,6 +42,8 @@ class Routes extends Component {
           <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route path="/selectTemplate" component={SelectTemplate} />
+            <Route path="/user-profile/edit" component={UserProfileEdit} />
+            <Route path="/user-profile" component={UserProfile} />
 
             <Route path="/stories/:id" component={SingleStoryContainer} />
             <Route path="/templates" component={Templates} />

@@ -37,7 +37,3 @@ router.post("/logout", (req, res) => {
 router.get("/me", (req, res) => {
   res.json(req.user);
 });
-
-router.get("/one", function(req, res) {
-  res.send("hello world");
-});
