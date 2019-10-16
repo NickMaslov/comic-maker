@@ -2,7 +2,7 @@ const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const cors = require("cors");
+// const cors = require("cors");
 const db = require("./db");
 const port = process.env.PORT || 8080;
 const app = express();
@@ -11,7 +11,7 @@ const app = express();
 app.use(morgan("dev"));
 
 //a Connect/Express middleware
-app.use(cors());
+// app.use(cors());
 
 // body parsing middleware
 app.use(bodyParser.json());

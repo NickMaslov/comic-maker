@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { getUserThunk } from "./store";
+import { me } from "./store";
 import { Navbar } from "./components";
-// import Routes from "./routes";
+import Routes from "./routes";
 
 class App extends Component {
   render() {
     return (
       <div>
         <Navbar />
-        {/* <Routes /> */}
+        <Routes />
       </div>
     );
   }
@@ -24,7 +24,7 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    getUser: user => dispatch(getUserThunk(user))
+    getUser: user => dispatch(me(user))
   };
 };
 
