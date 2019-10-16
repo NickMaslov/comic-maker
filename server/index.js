@@ -2,7 +2,7 @@ const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-// const cors = require("cors");
+const cors = require("cors");
 const compression = require("compression");
 const session = require("express-session");
 const passport = require("passport");
@@ -28,7 +28,7 @@ passport.deserializeUser(async (id, done) => {
 app.use(morgan("dev"));
 
 //Connect/Express middleware
-// app.use(cors());
+app.use(cors());
 
 // body parsing middleware
 app.use(bodyParser.json());

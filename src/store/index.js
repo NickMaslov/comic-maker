@@ -8,6 +8,9 @@ import stories from "./stories";
 import chapters from "./chapters";
 import templates from "./templates";
 
+import axiosDefaults from "axios/lib/defaults";
+axiosDefaults.baseURL = "http://localhost:8080";
+
 const reducer = combineReducers({
   user,
   stories,
