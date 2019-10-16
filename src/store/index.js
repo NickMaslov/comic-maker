@@ -6,11 +6,13 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import user from "./user";
 import stories from "./stories";
 import chapters from "./chapters";
+import templates from "./templates";
 
 const reducer = combineReducers({
   user,
   stories,
-  chapters
+  chapters,
+  templates
 });
 
 const middleware = composeWithDevTools(
@@ -22,3 +24,4 @@ export default store;
 export * from "./user";
 export * from "./stories";
 export * from "./chapters";
+export * from "./templates";

@@ -6,6 +6,9 @@ import {
   Login,
   Signup,
   HomePage,
+  Templates,
+  SelectTemplate,
+  SingleStoryContainer,
   OpenStories,
   CompletedChapter
 } from "./components";
@@ -20,6 +23,9 @@ class Routes extends Component {
   }
 
   render() {
+    const { isLoggedIn } = this.props;
+    console.log(isLoggedIn);
+
     return (
       <Switch>
         <Route path="/login" component={Login} />
@@ -29,6 +35,18 @@ class Routes extends Component {
           path="/:storyId/completedChapters"
           component={CompletedChapter}
         />
+
+        {!isLoggedIn && (
+          <Switch>
+            {/* Routes placed here are only available after logging in */}
+            <Route path="/selectTemplate" component={SelectTemplate} />
+
+            <Route path="/stories/:id" component={SingleStoryContainer} />
+            <Route path="/templates" component={Templates} />
+            <Route path="/open-stories" component={OpenStories} />
+            <Route component={HomePage} />
+          </Switch>
+        )}
 
         <Route component={HomePage} />
       </Switch>

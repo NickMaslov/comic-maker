@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { fetchStoryThunk } from '../../store';
-import Modal from 'react-modal';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { fetchStoryThunk } from "../../store";
+import Modal from "react-modal";
 
-Modal.setAppElement('#app');
+Modal.setAppElement("#root");
 
 class SingleStory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageUrl: '',
+      imageUrl: "",
       modalIsOpen: false
     };
 
@@ -73,7 +73,7 @@ class SingleStory extends Component {
               <div>Story name: {title}</div>
               <div>Creator: {creator && creator.email}</div>
               <div>
-                Contributors:{' '}
+                Contributors:{" "}
                 {contributors &&
                   contributors.map(col => {
                     return <p key={col.id}>{col.email}</p>;
@@ -81,7 +81,7 @@ class SingleStory extends Component {
               </div>
               <button type="button" className="single-story-btn">
                 <Link to={`/${id}/completedChapters`}>
-                  <span style={{ color: 'white' }}>View The Story</span>
+                  <span style={{ color: "white" }}>View The Story</span>
                 </Link>
               </button>
             </div>
@@ -110,7 +110,7 @@ class SingleStory extends Component {
                         ) : (
                           <Link
                             to={{
-                              pathname: '/selectTemplate',
+                              pathname: "/selectTemplate",
                               state: {
                                 storyid: this.props.story.id,
                                 chapterid: chapter.id,
@@ -136,7 +136,7 @@ class SingleStory extends Component {
                           className="single-story-thumbnail-img"
                         />
                       ) : (
-                        '' // null
+                        "" // null
                       )}
                     </li>
                   );
@@ -163,7 +163,10 @@ function mapDispatch(dispatch, ownProps) {
   };
 }
 
-export default connect(mapState, mapDispatch)(SingleStory);
+export default connect(
+  mapState,
+  mapDispatch
+)(SingleStory);
 
 // Button 'see completed chaps => view the story => new component
 // ***extra*** edit story name / cover image => modal
