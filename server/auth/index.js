@@ -37,9 +37,3 @@ router.post("/logout", (req, res) => {
 router.get("/me", (req, res) => {
   res.json(req.user);
 });
-
-router.use((req, res, next) => {
-  const error = new Error("Not Found");
-  error.status = 404;
-  next(error);
-});
