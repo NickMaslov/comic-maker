@@ -4,9 +4,13 @@ import thunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import user from "./user";
+import stories from "./stories";
+import chapters from "./chapters";
 
 const reducer = combineReducers({
-  user
+  user,
+  stories,
+  chapters
 });
 
 const middleware = composeWithDevTools(
@@ -16,3 +20,5 @@ const store = createStore(reducer, middleware);
 
 export default store;
 export * from "./user";
+export * from "./stories";
+export * from "./chapters";

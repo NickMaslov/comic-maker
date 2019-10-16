@@ -2,7 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
-import { Login, Signup, HomePage } from "./components";
+import {
+  Login,
+  Signup,
+  HomePage,
+  OpenStories,
+  CompletedChapter
+} from "./components";
 import { me } from "./store";
 
 /**
@@ -18,6 +24,11 @@ class Routes extends Component {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        <Route path="/open-stories" component={OpenStories} />
+        <Route
+          path="/:storyId/completedChapters"
+          component={CompletedChapter}
+        />
 
         <Route component={HomePage} />
       </Switch>
